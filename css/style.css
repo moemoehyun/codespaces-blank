@@ -1,4 +1,7 @@
-
+body {
+    background-color: rgb(228, 232, 234);
+    color: black;
+  }
 
 .header{
     width: 100px;
