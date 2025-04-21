@@ -1,6 +1,12 @@
-body{
-    background-image: url("image\f6a3d965-5325-4f08-b25f-3c049b55691a.png");
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.header{
+    background-image: url("home_image.png");
     background-size: cover;
+    z-index: 5;
 }
 
 .container{
