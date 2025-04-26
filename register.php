@@ -1,24 +1,24 @@
 <?php
-require 'config.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-    $stmt->bindValue(':username', $username, SQLITE3_TEXT);
-    $stmt->bindValue(':password', $password, SQLITE3_TEXT);
-
-    try {
-        $stmt->execute();
-        echo "登録完了！<a href='login.php'>ログインへ</a>";
-    } catch (Exception $e) {
-        echo "登録失敗：" . $e->getMessage();
-    }
-}
+session_start();
 ?>
-<form method="POST">
-    <input name="username" required placeholder="ユーザー名">
-    <input type="password" name="password" required placeholder="パスワード">
-    <button type="submit">登録</button>
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+</head>
+<body>
+    <h1>新規登録</h1>
+    <form action="register_process.php" method="POST">
+        <label for="username">ユーザー名:</label>
+        <input type="text" name="username" id="username" required><br><br>
+        <label for="password">パスワード:</label>
+        <input type="password" name="password" id="password" required><br><br>
+        <label for="confirm_password">パスワード確認:</label>
+        <input type="password" name="confirm_password" id="confirm_password" required><br><br>
+        <button type="submit">登録</button>
+    </form>
+    <a href="login.php">ログイン</a>
+</body>
+</html>

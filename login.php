@@ -1,27 +1,22 @@
 <?php
 session_start();
-require 'config.php';
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $stmt = $db->prepare("SELECT * FROM users WHERE username = :username");
-    $stmt->bindValue(':username', $username, SQLITE3_TEXT);
-    $result = $stmt->execute();
-    $user = $result->fetchArray(SQLITE3_ASSOC);
-
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['username'];
-        header("Location: home.php");
-        exit;
-    } else {
-        echo "ログイン失敗";
-    }
-}
 ?>
-<form method="POST">
-    <input name="username" required>
-    <input type="password" name="password" required>
-    <button type="submit">ログイン</button>
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+</head>
+<body>
+    <h1>ログイン</h1>
+    <form action="login_process.php" method="POST">
+        <label for="username">ユーザー名:</label>
+        <input type="text" name="username" id="username" required><br><br>
+        <label for="password">パスワード:</label>
+        <input type="password" name="password" id="password" required><br><br>
+        <button type="submit">ログイン</button>
+    </form>
+    <a href="register.php">新規登録</a>
+</body>
+</html>
