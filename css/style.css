@@ -161,7 +161,7 @@ li {
   }
 
 
-  .cantact-field {
+  .post {
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
@@ -173,8 +173,8 @@ li {
     gap: 20px;
   }
   
-  .cantact-field input[type="text"],
-  .cantact-field textarea {
+  .post input,
+  .post textarea {
     padding: 12px 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -184,11 +184,11 @@ li {
     box-sizing: border-box;
   }
   
-  .cantact-field textarea {
+  .post textarea {
     min-height: 120px;
   }
   
-  .cantact-field .btn {
+  .post .btn {
     background-color: #26d0c9;
     color: white;
     border: none;
@@ -199,7 +199,7 @@ li {
     transition: background-color 0.3s ease;
   }
   
-  .cantact-field .btn:hover {
+  .post .btn:hover {
     background-color: #1bb3ad;
   }
   

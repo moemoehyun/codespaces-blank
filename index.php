@@ -9,16 +9,8 @@
      <title>Document</title>
 </head>
 <body>
-     <div class="header">
-      <div class="header-logo">U-House</div>
-      <div class="header-list">
-        <ul>
-          <li>製品情報</li>
-          <li>会社概要</li>
-          <li>お問い合わせ</li>
-        </ul>
-      </div>
-    </div>
+     <?php include 'header.php'; ?>
+
      <div class="container">
           <div class="home">
                <h3>いい暮らしの中に<br>いつもある</h3>
@@ -46,7 +38,7 @@
      </div>
 
      <div class="btn-wrapper">
-          <a href="#" class="btn signup">新規登録はこちら</a>
+          <a href="login.php" class="btn signup">ログイン</a>
           <p>or sign up with</p>
           <a href="#" class="btn facebook">
           <!-- ここに<span>タグを追加しましょう -->
@@ -64,7 +56,7 @@
           <h1>ご不明点をお問い合わせください</h1>
      </div>
 
-     <div class="cantact-field">
+     <div class="post">
           <input type="text" placeholder="お名前">
           <textarea placeholder="お問い合わせ内容"></textarea>
           <input class="btn" type="submit" value="送信">
